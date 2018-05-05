@@ -4,6 +4,7 @@ var express = require('express'),
  httpServer = http.Server(app);
 
 app.use('/static', express.static('static'));
+app.use('/.well-known/acme-challenge', express.static('.well-known/acme-challenge'));
 
 app.get('/*', function(req, res) {
 console.log('request');
